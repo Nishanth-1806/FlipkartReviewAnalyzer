@@ -2,9 +2,12 @@ import streamlit as st
 import pickle
 import os
 import sys
+import nltk
+
+nltk.download('punkt')
+nltk.download('stopwords')
 
 # Add src to path
-sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src'))
 from preprocess import clean_text
 
 # Page Config
@@ -116,7 +119,7 @@ st.markdown("""
 st.markdown('<div class="main-header"><h1>🏸 Review Sentiment Pro</h1><p>Analyze Yonex Mavis 350 reviews with AI</p></div>', unsafe_allow_html=True)
 
 # Load model
-model_path = os.path.join(os.path.dirname(__file__), '..', 'model.pkl')
+model_path = os.path.join(os.path.dirname(__file__), 'model.pkl')
 
 @st.cache_resource
 def load_model():
