@@ -1,8 +1,7 @@
+streamlit==1.32.0
 pandas
+numpy
 scikit-learn
-streamlit
 nltk
-matplotlib
-seaborn
-wordcloud
-beautifulsoup4
+joblib
+altair==5.3.0
